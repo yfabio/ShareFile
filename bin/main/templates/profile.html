@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+
+<div layout:fragment="content">
+	
+	<div class="div-cont">
+
+		<form method="POST" th:object="${staff}" th:action="@{/staff/user/profile/update}">
+
+			<input type="hidden" name="id" th:field="*{id}" />			
+			<input type="hidden" name="password" th:field="*{password}" />
+			<input type="hidden" name="confirmPassword" th:field="*{confirmPassword}"/>
+			
+
+			<div class="div-succeed-cont"  th:if="${msg != null}">
+				<span th:text="${msg}"></span>
+			</div>
+
+			<br>
+			
+			<div class="div-error-message" th:if="${error != null}">
+				<span th:text="${error}"></span>
+			</div>
+			
+			<br>
+
+			<fieldset>
+				<legend> Staff </legend>
+				
+				<div>
+					<div>
+						<label for="name">Name</label>
+					</div>
+					<div>
+						<input type="text" id="name" name="name" placeholder="Name..." th:field="*{name}" th:classappend="${#fields.hasErrors('name')} ? 'border-error' : '' "/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('name')}">
+						<span th:errors="*{name}"></span>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="email">Email</label>
+					</div>
+					<div>
+						<input type="email" id="email" name="email" placeholder="Email..." th:field="*{email}"  th:classappend="${#fields.hasErrors('email')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('email')}">
+							<span th:errors="*{email}"></span>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="phone">Phone</label>
+					</div>
+					<div>
+						<input type="tel" id="phone" name="phone" placeholder="Phone..." th:field="*{phone}" th:classappend="${#fields.hasErrors('phone')} ? 'border-error' : ''" />
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('phone')}">
+							<span th:errors="*{phone}"></span>
+					</div>
+				</div>
+				<div  sec:authorize="hasRole('ADMIN')">
+					<div>
+						<label for="profile">Profile</label>
+					</div>
+					<div>
+						<select id="profile" th:field="*{profile}">
+							<option th:each="profile : ${T(com.tech.developer.domain.Profile).values()}"
+               				th:value="${profile}" th:text="${profile}"></option>
+						</select>
+					</div>
+					<div class="div-error-message">
+						<span></span>
+					</div>
+				</div>				
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend> Department </legend>
+
+				<div>
+					<div>
+						<label for="job">Job</label>
+					</div>
+					<div>
+						<input type="text" id="job" name="job" placeholder="Occupation..." th:field="*{sector.job}" th:classappend="${#fields.hasErrors('sector.job')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('sector.job')}">
+						<span th:errors="*{sector.job}"></span>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="floor">Floor</label>
+					</div>
+					<div>
+						<input type="text" id="floor" name="floor" placeholder="Floor..." th:field="*{sector.floor}" th:classappend="${#fields.hasErrors('sector.floor')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('sector.floor')}">
+						<span th:errors="*{sector.floor}"></span>
+					</div>
+				</div>
+
+
+				<div>
+					<div>
+						<label for="room">Room</label>
+					</div>
+					<div>
+						<input type="text" id="room" name="room" placeholder="Room..." th:field="*{sector.room}" th:classappend="${#fields.hasErrors('sector.room')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('sector.room')}">
+						<span th:errors="*{sector.room}"></span>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="desk">Desk</label>
+					</div>
+					<div>
+						<input type="text" id="desk" name="desk" placeholder="Desk..." th:field="*{sector.desk}" th:classappend="${#fields.hasErrors('sector.desk')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('sector.desk')}">
+						<span th:errors="*{sector.desk}"></span>
+					</div>
+				</div>
+			</fieldset>
+			<br>
+			<div>
+				<input type="submit" value="confirm"/> 
+				<input type="button" value="cancel" th:onclick="'location.href=\''+@{/staff/user/home}+'\' '"/>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+</html>

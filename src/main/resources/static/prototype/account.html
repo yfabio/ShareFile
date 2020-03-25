@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>NEW ACCOUNT</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+   
+   
+    <!- start header -->
+
+
+    <div class="div-main-login">      
+
+        <form method="POST" action="login.html">
+       
+            <div class="inner-div">
+
+                <h1>new account</h1>
+                
+                <div class="div-succeed-cont">
+                    <span>User has been created successfully!</span>
+                </div>
+                   
+                <br>
+    
+                <fieldset>
+                   <legend>
+                       Staff
+                   </legend>    
+    
+                   <div>
+                       <div>
+                           <label for="name">Name</label>                
+                     </div>
+                     <div>
+                          <input type="text" id="name" name="name" placeholder="Name..." class="border-error"/>
+                     </div>
+                     <div class="div-error-message">
+                        <span>
+                            <!--error message-->  
+                             name was invalid                
+                        </span>                       
+                    </div>
+                   </div>
+    
+                  <div>
+                       <div>
+                           <label for="email">Email</label>
+                       </div>
+                       <div>
+                           <input type="email" id="email" name="email" placeholder="Email..."/> 
+                       </div>
+                       <div class="div-error-message">
+                            <span>
+                                <!--error message-->   
+                                 email was invalid               
+                            </span>                    
+                       </div>
+                  </div>    
+                  
+                  <div>
+                       <div>
+                           <label for="phone">Phone</label>
+                       </div>
+                       <div>
+                           <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" placeholder="Phone..."/> 
+                       </div>
+                       <div class="div-error-message">
+                            <span>
+                                <!--error message-->   
+                                 phone was invalid               
+                            </span>                        
+                       </div>
+                   </div>  
+                   
+                   <div>
+                        <div>
+                            <label for="profile">Profile</label>
+                        </div>
+                        <div>
+                            <select id="profile" name="profile">
+                                <option value="0">Select</option>
+                                <option value="A">Admin</option>
+                                <option value="U">User</option>                             
+                            </select>
+                        </div>
+                        <div class="div-error-message">
+                            <span>
+                                <!--error message-->    
+                                 select an item please              
+                            </span>                          
+                        </div>
+                   </div> 
+                   <div>
+                       <div>
+                           <label for="password">Password</label>
+                       </div>
+                       <div>
+                           <input type="password" id="password" name="password" placeholder="Password..."/> 
+                       </div>
+                       <div class="div-error-message">
+                            <span>
+                                <!--error message-->    
+                                 passowrd was invalid              
+                            </span>  
+                       </div>
+                   </div>  
+    
+                   <div>
+                       <div>
+                           <label for="repassword">Retype Password</label>
+                       </div>
+                       <div>
+                           <input type="password" id="repassword" name="repassword" placeholder="Password..."/> 
+                       </div>
+                       <div class="div-error-message">
+                            <span>
+                                <!--error message-->   
+                                 password wasn't alike               
+                            </span>  
+                       </div>
+                   </div> 
+    
+                </fieldset>   
+            <br>
+               <fieldset>
+                   <legend>
+                       Department            
+                   </legend>
+    
+                   <div>
+                       <div>
+                           <label for="occupation">Occupation</label>
+                       </div>
+                       <div>
+                           <input type="text" id="occupation" name="occupation" placeholder="Occupation..."/>
+                       </div>
+                       <div class="div-error-message">                      
+                            <span>
+                                <!--error message-->     
+                                 occupation wasn't valid             
+                            </span>                         
+                       </div>
+                   </div> 
+    
+                   <div>
+                       <div>
+                           <label for="floor">Floor</label>
+                       </div>
+                       <div>
+                           <input type="number" id="floor" name="floor" placeholder="Floor..."/> 
+                       </div>
+                       <div class="div-error-message">                      
+                            <span>
+                                <!--error message-->    
+                                floor cannot be empty              
+                            </span>                          
+                        </div>
+                   </div>
+    
+    
+                   <div>
+                       <div>
+                           <label for="room">Room</label>
+                       </div>
+                       <div>
+                           <input type="text" id="room" name="room" placeholder="Room..."/> 
+                       </div>
+                       <div class="div-error-message">                      
+                            <span>
+                                <!--error message-->  
+                                 room cannot be empty!                
+                            </span>                     
+                        </div>
+                   </div>
+    
+                   <div>
+                       <div>
+                           <label for="desk">Desk</label>
+                       </div>
+                       <div>
+                           <input type="text" id="desk" name="desk" placeholder="Desk..."/> 
+                       </div>
+                       <div class="div-error-message">                    
+                            <span>
+                                <!--error message-->      
+                                 desk cannot be empty            
+                            </span>                         
+                        </div>
+                   </div>    
+                </fieldset>
+                <br/>
+                <div>
+                    <div>                            
+                        <input type="submit" value="confirm"/>
+                        <input type="button" value="cancel"/>
+                    </div>
+                </div>
+             </div>
+            
+             
+        </form>
+
+
+
+    </div>
+
+    
+    <!- end footer -->    
+</body>
+</html>

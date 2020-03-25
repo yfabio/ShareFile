@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>SHARED FOLDER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src=""></script>
+</head>
+
+<body>
+   
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png"/></a></td>
+                    <td><a href="profile.html"><img src="images/user.png"/></a></td>
+                    <td><a href="group.html"><img src="images/group.png"/></a></td>
+                    <td><a href="work_group.html"><img src="images/createdgroup.png"/></a></td>
+                    <td><a href="groups.html"><img src="images/group_work.png"/></a></td>                   
+                    <td><a href="folder.html"><img src="images/folder.png"/></a></td>
+                    <td><a href="folder_work.html"><img src="images/folder_work.png"/></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png"/></a></td>
+                    <td><a href="file.html"><img src="images/file.png"/></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png"/></a></td>
+                    <td><a href="login.html"><img src="images/exit.png"/></a></td>
+                </tr>
+            </table>               
+        </div>  
+    </header>
+
+    <!-- start header -->
+
+    <div class="div-cont">
+        <form method="GET" action="">
+            <fieldset>
+                <legend>shared group</legend>
+                <div>
+                    <div>
+                        <label for="selectedgroup">Select a group</label>            
+                    </div>
+                    <div>
+                        <select id="selectedgroup" name="selectedgroup">
+                            <option>Select...</option>
+                            <option>Managers</option>
+                            <option>Finance</option>
+                            <option>Directories</option>
+                            <option>Human Resources </option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset> 
+        </form>
+        <br />
+        <div>
+            <input type="submit" value="load" />
+            <input type="button" value="cancel" />
+        </div>   
+    </div>
+    <br/>       
+    <form method="POST" action="#">    
+            <fieldset>
+                <legend>files</legend>
+
+
+                <table class="tb-cont"> 
+                    <tr>
+                        <th>name</th>
+                        <th>permission</th>
+                        <th>owner</th>
+                        <th colspan="2">action</th>
+                    </tr>
+                    <tr>
+                        <td><a href="#">bills.pfd</a></td>                        
+                        <td>Write</td>
+                        <td>Olivia</td>
+                        <td>
+                            <input type="button" value="show"/>
+                            <input type="button" value="delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">calendar.docx</a></td>                      
+                        <td>Read</td>
+                        <td>Olivia</td>
+                        <td>
+                            <input type="button" value="show"/>                           
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>        
+    </form>
+    <!-- end footer -->    
+</body>
+</html>

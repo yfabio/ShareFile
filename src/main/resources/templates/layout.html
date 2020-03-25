@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</head>
+
+    <!-- start header -->
+
+    <body> 
+    
+    	  
+	  		<div sec:authorize="isAuthenticated()">
+	  			<header>
+				       <div class="div-dash-welcom">               
+				           <span th:text="${#authentication.principal.staff.welcome}"></span>
+				       </div>
+			           <div class="div-header-cont">
+			             <table>
+			                 <tr>
+			                    <td><a th:href="@{/staff/user/home}"><img th:src="@{/images/home.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/profile}"><img th:src="@{/images/user.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/pool}"><img th:src="@{/images/group.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/pools}"><img th:src="@{/images/createdgroup.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/sharepools}"><img th:src="@{/images/group_work.png}"/></a></td>                   
+			                    <td><a th:href="@{/staff/user/folder}"><img th:src="@{/images/folder.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/folders}"><img th:src="@{/images/folder_work.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/sharedfolder}"><img th:src="@{/images/sharedfolder.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/file}"><img th:src="@{/images/file.png}"/></a></td>
+			                    <td><a th:href="@{/staff/user/files}"><img th:src="@{/images/filemanaged.png}"/></a></td>
+			                    <td><a th:href="@{/logout}"><img th:src="@{/images/exit.png}"/></a></td>
+			                 </tr>
+			             </table>               
+			           </div>  
+ 		   		</header>
+	  		</div>
+    	 
+    
+       
+    	<!-- content -->   
+   		<div layout:fragment="content"/>   
+   		
+   		
+   		
+    </body>
+          
+   	   <!-- end footer -->
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FILE</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+   
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png"/></a></td>
+                    <td><a href="user.html"><img src="images/user.png"/></a></td>
+                    <td><a href="group.html"><img src="images/group.png"/></a></td>
+                    <td><a href="groups.html"><img src="images/createdgroup.png"/></a></td>
+                    <td><a href="folder.html"><img src="images/folder.png"/></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png"/></a></td>
+                    <td><a href="file.html"><img src="images/file.png"/></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png"/></a></td>
+                    <td><a href="login.html"><img src="images/exit.png"/></a></td>
+                </tr>
+            </table>               
+        </div>  
+    </header>
+
+    <!-- start header -->
+
+        <div class="div-cont">
+            <form method="POST" action="#">
+        
+                <div class="div-succeed-cont">
+                    <spa>File has been created successfully!</spa>
+                </div>
+    
+                <br/>
+    
+                <fieldset>
+                    <legend>
+                       <span>File</span>
+                    </legend>           
+                    
+                    <div>
+                        <div>
+                            <label id="filename">Name</label>
+                        </div>
+                        <div>
+                            <input type="text" id="filename" name="filename" value="" placeholder="File Name..." class="border-error"/>
+                        </div>
+                        <div class=" div-error-message">
+                            <span>
+                                <!--error message-->    
+                                file name is invalid              
+                            </span>                       
+                        </div>
+                    </div>
+    
+                    <div>
+                        <div>
+                            <label for="file">Choose</label>
+                        </div>
+                        <div>
+                            <input type="file" id="file" name="file" value="" accept=
+                            "application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+                            text/plain, application/pdf, image/*">
+                        </div>
+                        <div class=" div-error-message">
+                            <span>
+                                <!--error message-->                  
+                            </span>                       
+                        </div>
+                    </div>        
+                    <div>
+                        <div>
+                            <label for="folderselected">Folder</label>
+                        </div>
+                        <div>
+                            <select id="folderselected" name="folderselected">
+                                <option value="">Select...</option>
+                                <option value="">Finance</option>
+                                <option value="">Expenses</option>
+                                <option value="">Bills</option>
+                                <option value="">Human Resources</option>
+                            </select>
+                        </div>
+                        <div class=" div-error-message">
+                            <span>
+                                <!--error message-->                  
+                            </span>                       
+                        </div>
+                    </div>        
+                </fieldset>      
+                <br/>
+                <div>
+                    <input type="submit" value="create"/>
+                    <input type="button" value="cancel"/>
+                </div>
+        </form>
+        
+        </div>
+    
+    <!-- end footer -->    
+
+</body>
+</html>

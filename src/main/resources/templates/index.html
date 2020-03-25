@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+
+<div layout:fragment="content">
+
+	<div>
+		<fieldset>
+			<legend>Dashboard</legend>
+			<div>
+				<table class="tb-cont">
+					<tr>
+						<th>Groups</th>
+						<td>You have <span th:text="${staff.pools.size()}"></span>
+							groups created so far
+						</td>
+					</tr>
+					<tr>
+						<th>Folders</th>
+						<td>You have <span th:text="${staff.folders.size()}"></span>
+							folders created so far
+						</td>
+					</tr>
+					<tr>
+						<th>Files</th>
+						<td>You have <span th:text="${staff.maxFiles}"></span> files
+							created so far
+						</td>
+					</tr>
+					<tr>
+						<th>Shared folder</th>
+						<td>You have shared <span th:text="${staff.groups.size()}"></span>
+							folders so far
+						</td>
+					</tr>
+				</table>
+			</div>
+		</fieldset>
+
+	</div>
+
+	<br />
+
+	<div sec:authorize="hasRole('ADMIN')">
+
+		<div>			
+			<fieldset>
+			
+				<legend>Staffs</legend>
+	
+				<table class="tb-cont">
+					<tr>
+						<th>name</th>
+						<th>email</th>
+						<th>phone</th>
+						<th>profile</th>
+						<th>job</th>
+						<th>floor</th>
+						<th>room</th>
+						<th>desk</th>
+						<th>action</th>
+					</tr>
+					<tr th:each="value : ${staff.staffs}">
+						<td th:text="${value.name}"></td>
+						<td th:text="${value.email}"></td>
+						<td th:text="${value.phone}"></td>
+						<td th:text="${value.profile}"></td>
+						<td th:text="${value.sector.job}"></td>
+						<td th:text="${value.sector.floor}"></td>
+						<td th:text="${value.sector.room}"></td>
+						<td th:text="${value.sector.desk}"></td>
+						<td><input type="button" value="edit" th:onclick="'location.href=\''+@{/staff/user/profiles/update}+ '?id=' + ${value.id} + '\';'"/></td>
+					</tr>
+				</table>
+			</fieldset>			
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</html>

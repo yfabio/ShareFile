@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CREATED GROUP</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png" /></a></td>
+                    <td><a href="user.html"><img src="images/user.png" /></a></td>
+                    <td><a href="group.html"><img src="images/group.png" /></a></td>
+                    <td><a href="groups.html"><img src="images/createdgroup.png" /></a></td>
+                    <td><a href="folder.html"><img src="images/folder.png" /></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png" /></a></td>
+                    <td><a href="file.html"><img src="images/file.png" /></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png" /></a></td>
+                    <td><a href="login.html"><img src="images/exit.png" /></a></td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <!-- start header -->
+
+    <div class="div-cont">
+
+        <form method="POST" action="">
+            
+            <div class="div-succeed-cont">
+                <spa>Folder finance has been shared successfully!</spa>
+            </div>
+
+            <br/>
+
+            <fieldset>
+                <legend>
+                    group management
+                </legend>
+                <div>
+                    <div>
+                        <label for="selectedgroup">Select a group:</label>
+                    </div>
+                    <div>
+                        <select id="selectedgroup" name="selectedgroup" class="border-error">
+                            <option value="">Select...</option>
+                            <option value="">Managers</option>
+                            <option value="">Directores</option>
+                            <option value="">Sales</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="div-error-message">
+                    <span>
+                        <!--error message-->
+                        Please, select a group
+                    </span>
+                </div>
+                <div>
+                    <div>
+                        <label for="selectedfolder">Select a folder:</label>
+                    </div>
+                    <div>
+                        <select id="selectedfolder" name="selectedfolder" class="border-error">
+                            <option value="">Select...</option>
+                            <option value="">Finance</option>
+                            <option value="">Expenses</option>
+                            <option value="">Bills</option>
+                            <option value="">Human Resources</option>
+                        </select>
+                    </div>
+                </div>              
+                <div class="div-error-message">
+                    <span>
+                        <!--error message-->
+                        select an item please!
+                    </span>
+                </div>
+            </fieldset>
+            <br/>
+            <div>
+                <input type="submit" value="share"/>
+                <input type="button" value="cancel"/>
+            </div>
+        </form>  
+    </div>
+    <br/>
+
+
+     <form method="POST" action="">
+        <fieldset>
+
+            <legend>
+                Groups' shared folder
+            </legend>
+
+            <table class="tb-cont">
+
+                <tr>
+                    <th>name</th>
+                    <th>permission</th>
+                    <th>shared folder</th>
+                    <th>action</th>
+                </tr>
+                <tr>
+                    <td>Managers</td>
+                    <td>Write</td>
+                    <td>Finance</td>
+                    <td>
+                        <input type="button" value="unshare"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Managers</td>
+                    <td>Write</td>
+                    <td>Finance</td>
+                    <td>
+                        <input type="button" value="unshare"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Managers</td>
+                    <td>Write</td>
+                    <td>Finance</td>
+                    <td>
+                        <input type="button" value="unshare"> 
+                    </td>
+                </tr>
+
+
+            </table>
+            
+
+        </fieldset>
+     </form>  
+
+
+
+    
+
+
+    <!-- end footer -->
+</body>
+
+</html>

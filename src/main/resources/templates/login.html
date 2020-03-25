@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+	
+	<div layout:fragment="content">
+		  
+		  <div class="div-main-login">
+
+            <form method="POST" th:action="@{/login}" >       
+
+                <div class="inner-div">
+                    
+                    <div class="div-login-img">               
+                        <img th:src="@{/images/lock.png}" />             
+                    </div>        
+                    <div>
+                        <div>
+                            <label for="email">Email</label>
+                        </div>
+                        <div>
+                            <input type="email" id="email" name="username" value="" placeholder="email..." />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="password">Password</label>
+                        </div>
+                        <div>
+                            <input type="password" id="password" name="password" value="" placeholder="password..." />
+                        </div>
+                    </div>                  
+                    <div>
+                        <input type="submit" value="login" />
+                        <input id="forget-pwd" type="button" value="forget password"  th:onclick="'location.href=\''+@{/public/forget}+'\''"/>                                                                
+                        <a id="new-login-account" th:href="@{/public/account/new}">New Account</a>                   
+                    </div>    
+                    <br/> 
+                    <div class="div-error-message" th:if="${msg != null}">
+                        <span th:text="${msg}"></span>
+                    </div>  
+                </div>   
+                        
+            </form>
+        </div>
+	</div>
+	
+</html>

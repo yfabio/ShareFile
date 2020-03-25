@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+
+<div layout:fragment="content">
+
+	<div th:if="${staff.pools.size() > 0}">
+		<form method="Get" th:object="${staff}">
+
+			<div class="div-succeed-cont" th:if="${msg!=null}">
+				<span th:text="${msg}"></span>
+			</div>
+
+			<br />
+
+			<div class="div-error-message" th:if="${error != null}">
+				<span th:text="${error}"></span>
+			</div>
+
+			<br />
+
+			<div>
+				<fieldset>
+					<legend> Groups </legend>
+
+					<table class="tb-cont">
+						<tr>
+							<th>name</th>
+							<th>permission</th>
+							<th>shared folder</th>
+							<th>users</th>
+							<th colspan="2">action</th>
+						</tr>
+						<tr th:each="pool : ${staff.pools}">
+							<td th:text="${pool.name}"></td>
+							<td th:text="${pool.permission}"></td>
+							<td><div th:if="${pool.folder != null}"><span th:text="${pool.folder.name}"></span></div></td>
+							<td>
+								<ul>
+									<li th:each="name : ${pool.names}" th:text="${name}"></li>
+								</ul>
+							</td>
+							<td><input type="button" value="edit"
+								th:onclick="'location.href=\''+@{/staff/pool/setup}+ '?id=' + ${pool.id} + '\';'"></td>
+							<td><input type="button" value="delete"
+								th:onclick="'location.href=\''+@{/staff/pool/delete}+ '?id=' + ${pool.id} + '\';'"></td>
+						</tr>
+					</table>
+				</fieldset>
+			</div>
+		</form>
+	</div>
+	<div th:if="${staff.pools.size() == 0}" th:classappend="'div-login-img'">
+		<h3>You haven't created any group yet</h3>
+	</div>
+
+
+
+</div>
+
+
+
+</html>

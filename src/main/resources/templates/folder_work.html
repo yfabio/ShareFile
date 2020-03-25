@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+	<div th:if="${staff.folders.size() > 0}">
+		<form method="GET" th:object="${staff}" accept="">
+
+			<div class="div-succeed-cont" th:if="${msg!=null}">
+				<span th:text="${msg}"></span>
+			</div>
+
+			<br />
+
+			<div class="div-error-message" th:if="${error != null}">
+				<span th:text="${error}"></span>
+			</div>
+
+			<br />
+			<fieldset>
+				<legend> Folders </legend>
+
+				<table class="tb-cont">
+					<tr>
+						<th>name</th>
+						<th colspan="5">action</th>
+					</tr>
+					<tr th:each="folder : ${staff.folders}">
+						<td th:text="${folder.name}"></td>
+						<td><input type="button" value="edit"
+							th:onclick="'location.href=\''+@{/staff/folder/setup}+ '?id=' + ${folder.id} + '\';'">
+						</td>
+						<td><input type="button" value="delete"
+							th:onclick="'location.href=\''+@{/staff/folder/delete}+ '?id=' + ${folder.id} + '\';'">
+						</td>
+					</tr>
+				</table>
+
+			</fieldset>
+		</form>
+	</div>
+	<div th:if="${staff.folders.size() == 0}" th:classappend="'div-login-img'">
+		<h3>You haven't created any folder yet</h3>
+	</div>	
+	
+
+</div>
+</html>

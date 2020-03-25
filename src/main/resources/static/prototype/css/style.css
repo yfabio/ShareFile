@@ -1,0 +1,204 @@
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1080px;    
+    padding-bottom: 100px;
+    text-transform: uppercase;  
+}
+
+h1 {   
+    font-size: 22px;
+}
+
+input {
+    border: 2px solid lightslategray;
+}
+
+fieldset {
+    border-radius: 5px;
+}
+
+legend { 
+    font-weight: bold;
+    color: black;
+}
+
+
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=tel],
+input[type=number]
+{
+   width: 100%;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   border-radius: 5px;   
+   margin-bottom: 5px;
+  
+}
+
+input[type=file],
+select {
+   width: 300px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   border-radius: 5px;   
+   border: 2px solid lightslategray;
+   outline: none;
+}
+
+input[type=submit],
+input[type=button]{
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    font-weight: bold;  
+    text-transform: uppercase;  
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    color: black;
+    outline: none;
+}
+
+
+input[type=submit]:hover,
+input[type=button]:hover{
+   color: white;
+   background-color: orangered;
+}
+
+.div-main-login {
+    margin-top: 50px;
+}
+
+.inner-div {      
+    width: 600px;    
+    margin: 0 auto;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;    
+}
+
+.div-login-img{
+    text-align: center;
+    padding-top: 10px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: navy;
+    text-decoration: underline;
+}
+
+
+#forget-pwd{
+    width: 160px;
+}   
+
+#new-login-account{
+    margin-left: 25px;
+    text-transform: lowercase;
+    font-size: 16px;
+}
+
+.div-error-message {
+    font-weight: bold;
+    color: red;
+    font-size: 14px;   
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.div-succeed-cont {
+    background-color: darkgreen;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.border-error {
+    border: 2px solid red;
+}
+
+.div-header-cont img {
+    width: 50px;
+    width: 50px;    
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+table {
+  border-spacing: 5px;
+}
+
+.div-header-cont img:hover {
+    background-color: orangered;    
+}
+
+.div-dash-welcom{
+  float: right;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+.div-cont {
+   width: 600px;
+   margin-top: 5px;
+}
+
+.tb-cont{
+    width: 100%;
+}
+
+.tb-cont {
+    border-spacing: 1px;
+}
+
+.tb-cont tr:nth-child(even){
+    background-color: #B0BEC5;
+}
+
+.tb-cont tr:nth-child(odd){
+    background-color: #78909C;
+}
+
+.tb-cont th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
+.tb-cont td {
+    text-align: center;  
+}
+
+ul {   
+   list-style-type: none;   
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+ul li {
+    text-align: center;
+}
+
+
+

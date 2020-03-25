@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+	<div class="div-main-login">
+
+
+		<form method="POST" th:object="${staff}" th:action="@{/public/find/forget}">
+		
+			<input type="hidden" th:field="*{id}">
+			<input type="hidden" th:field="*{name}">		
+			<input type="hidden" th:field="*{phone}">
+			<input type="hidden" th:field="*{profile}">
+			<input type="hidden" th:field="*{sector.job}">
+			<input type="hidden" th:field="*{sector.floor}">
+			<input type="hidden" th:field="*{sector.room}">
+			<input type="hidden" th:field="*{sector.desk}">
+	
+
+			<div class="inner-div">
+
+				<h1>Password assistance</h1>
+
+				<div th:if="${edit}">
+					<div class="div-succeed-cont" th:if="${msg != null}">
+						<span th:text="${msg}"></span>					
+					</div>
+					<div>
+						<div>
+							<label for="email">Email</label>
+						</div>
+						<div>
+							<input type="email" id="email" name="email"  placeholder="email..." th:field="*{email}" th:classappend="${#fields.hasErrors('email')} ? 'border-error' : ''"/>
+						</div>
+					</div>
+					<div>
+						<input type="submit" value="confirm" /> 
+						<input type="button"value="cancel" th:onclick="'location.href=\''+@{/}+'\';'"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('email')}">
+						<span th:errors="*{email}"></span>
+					</div>
+				</div>
+
+				<br>
+
+				<div th:if="${!edit}">					
+					<div>
+						<label for="password">password</label>
+					</div>
+					<div>
+						<input type="password" id="password" name="password" placeholder="Password..." th:field="*{password}" th:classappend="${#fields.hasErrors('password')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('password')}">
+						<span th:errors="*{password}"></span>
+					</div>
+					<div>
+						<label for="retypepassword">retype password</label>
+					</div>
+					<div>
+						<input type="password" id="retypepassword" name="retypepassword" placeholder="Retype Password..." th:field="*{confirmPassword}" th:classappend="${#fields.hasErrors('confirmPassword')} ? 'border-error' : ''"/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('confirmPassword')}">
+						<span th:errors="*{confirmPassword}"></span>
+					</div>					
+					<div>
+						<input type="submit" value="confirm" /> 
+						<input type="button"value="cancel" th:onclick="'location.href=\''+@{/public/cancel}+'\';'"/>
+					</div>					
+				</div>	
+				<div class="div-error-message" th:if="${error != null}">
+					<span th:text="${error}"></span>
+				</div>			
+			</div>
+		</form>
+	</div>
+</div>
+</html>

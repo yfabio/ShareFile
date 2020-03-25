@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+	<div class="div-cont">
+	
+		<form method="POST" th:object="${file}" th:action="@{/staff/user/file/update}" enctype="multipart/form-data">
+
+			<div class="div-succeed-cont" th:if="${msg!=null}">
+				<span th:text="${msg}"></span>
+			</div>
+
+			<br/>
+
+			<div class="div-error-message" th:if="${error != null}">
+				<span th:text="${error}"></span>
+			</div>
+
+			<fieldset>
+				<legend>
+					<span>File</span>
+				</legend>
+
+				<div>
+					<div>
+						<label id="filename">Name</label>
+					</div>
+					<div>
+						<input type="text" id="filename" name="filename" value="" placeholder="File Name..." th:field="*{name}" th:classappend="${#fields.hasErrors('name')} ? 'border-error' : '' "/>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('name')}">
+						<span th:errors="*{name}"></span>
+					</div>
+				</div>
+
+				<div>
+					<div>
+						<label for="file">Choose</label>
+					</div>
+					<div>
+						<input type="file" id="file" name="file" th:field="*{fileData}" th:classappend="${#fields.hasErrors('fileData')} ? 'border-error' : '' ">
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('fileData')}">
+						<span th:errors="*{fileData}"></span>
+					</div>
+				</div>
+				<div>
+					<div>
+						<label for="folderselected">Folder</label>
+					</div>
+					<div>
+						<select id="folderselected" name="folderselected" th:field="*{folder.id}" th:classappend="${#fields.hasErrors('folder')} ? 'border-error' : '' ">							
+							<option th:each="folder : ${folders}" th:value="${folder.id}" th:text="${folder.name}"></option>							
+						</select>
+					</div>
+					<div class="div-error-message" th:if="${#fields.hasErrors('folder')}">
+						<span th:errors="*{folder}"></span>
+					</div>
+				</div>
+			</fieldset>
+			<br />
+			<div>
+				<input type="submit" value="create" />
+				<input type="button" value="cancel" th:onclick="'location.href=\''+@{/staff/user/home}+'\';'"/>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+</html>

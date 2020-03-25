@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FILE MANAGER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src=""></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png" /></a></td>
+                    <td><a href="profile.html"><img src="images/user.png" /></a></td>
+                    <td><a href="group.html"><img src="images/group.png" /></a></td>
+                    <td><a href="work_group.html"><img src="images/createdgroup.png" /></a></td>
+                    <td><a href="groups.html"><img src="images/group_work.png" /></a></td>
+                    <td><a href="folder.html"><img src="images/folder.png" /></a></td>
+                    <td><a href="folder_work.html"><img src="images/folder_work.png" /></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png" /></a></td>
+                    <td><a href="file.html"><img src="images/file.png" /></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png" /></a></td>
+                    <td><a href="login.html"><img src="images/exit.png" /></a></td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <!-- start header -->
+
+
+    <div class="div-cont">
+        <form method="POST" action="">
+            <fieldset>
+                <legend>
+                    FILE MANAGEMENT
+                </legend>
+                <div>
+                    <div>
+                        <label for="selectedfolder">select a folder</label>
+                    </div>
+                    <div>
+                        <select id="seledctedfolder" name="selectedfolder">
+                            <option>Finance</option>
+                            <option>Expenses</option>
+                            <option>Bills</option>
+                            <option>Images</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <br />
+        <div>
+            <input type="submit" value="load" />
+            <input type="button" value="cancel" />
+        </div>
+    </div>
+
+    <br />
+
+    <form method="POST" action="">
+
+        <fieldset>
+            <legend>files</legend>
+
+
+            <table class="tb-cont">
+                <tr>
+                    <th>NAME</th>
+                    <th>OWNER</th>
+                    <th>FOLDER</th>
+                    <th colspan="2">ACTION</th>
+                </tr>
+                <tr>
+                    <td><a href="#">expenses.pfd</a></td>
+                    <td>carol</td>
+                    <td>finance</td>
+                    <td><input type="button" value="delete"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">expenses.pfd</a></td>
+                    <td>carol</td>
+                    <td>finance</td>
+                    <td><input type="button" value="delete"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">expenses.pfd</a></td>
+                    <td>carol</td>
+                    <td>finance</td>
+                    <td><input type="button" value="delete"></td>
+                </tr>
+                <tr>
+                    <td><a href="#">expenses.pfd</a></td>
+                    <td>carol</td>
+                    <td>finance</td>
+                    <td><input type="button" value="delete"></td>
+                </tr>                
+            </table>
+
+        </fieldset>
+    </form>
+    <!-- end footer -->
+</body>
+
+</html>

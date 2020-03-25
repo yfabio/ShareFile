@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FOLDER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+   
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png"/></a></td>
+                    <td><a href="profile.html"><img src="images/user.png"/></a></td>
+                    <td><a href="group.html"><img src="images/group.png"/></a></td>
+                    <td><a href="work_group.html"><img src="images/createdgroup.png"/></a></td>
+                    <td><a href="groups.html"><img src="images/group_work.png"/></a></td>                   
+                    <td><a href="folder.html"><img src="images/folder.png"/></a></td>
+                    <td><a href="folder_work.html"><img src="images/folder_work.png"/></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png"/></a></td>
+                    <td><a href="file.html"><img src="images/file.png"/></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png"/></a></td>
+                    <td><a href="login.html"><img src="images/exit.png"/></a></td>
+                </tr>
+            </table>               
+        </div>  
+    </header>
+
+    <!-- start header -->
+    <div class="div-cont">
+        <form method="POST" action="#">
+        
+            <div class="div-succeed-cont">
+                <spa>Folder has been created successfully!</spa>
+            </div>
+
+            <br/>
+
+            <fieldset>
+                <Legend>
+                    New Folder
+                </Legend>
+
+                <div>
+                    <div>
+                        <label for="name">Name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Folder Name..." class="border-error"/>
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->      
+                            folder's name wasn't valid, please try again!            
+                        </span>                       
+                    </div>
+                </div>       
+
+            </fieldset>       
+            <br/>
+            <div>
+                <input type="submit" value="create"/>
+                <input type="button" value="cancel"/>
+            </div>
+        </form>
+    </div>
+
+  
+
+    <!-- end footer -->    
+</body>
+</html>

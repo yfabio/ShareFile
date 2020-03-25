@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>USER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="div-dash-welcom">
+            <span>Welcome Carol! today is friday 15th March</span>
+        </div>
+        <div class="div-header-cont">
+            <table>
+                <tr>
+                    <td><a href="index.html"><img src="images/home.png" /></a></td>
+                    <td><a href="user.html"><img src="images/user.png" /></a></td>
+                    <td><a href="group.html"><img src="images/group.png" /></a></td>
+                    <td><a href="groups.html"><img src="images/createdgroup.png" /></a></td>
+                    <td><a href="folder.html"><img src="images/folder.png" /></a></td>
+                    <td><a href="sharedfolder.html"><img src="images/sharedfolder.png" /></a></td>
+                    <td><a href="file.html"><img src="images/file.png" /></a></td>
+                    <td><a href="filemanaged.html"><img src="images/filemanaged.png" /></a></td>
+                    <td><a href="login.html"><img src="images/exit.png" /></a></td>
+                </tr>
+            </table>
+        </div>
+    </header>
+
+    <!-- start header -->
+
+    <div class="div-cont">
+
+        <form method="POST" action="#">
+
+            <div class="div-succeed-cont">
+                <spa>User has been created successfully!</spa>
+            </div>
+
+            <br>
+
+            <fieldset>
+                <legend>
+                    Staff
+                </legend>
+
+                <div>
+                    <div>
+                        <label for="name">Name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Name..." class="border-error" />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            - name was invalid
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="email">Email</label>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="phone">Phone</label>
+                    </div>
+                    <div>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}"
+                            placeholder="Phone..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>
+                    Department
+                </legend>
+
+                <div>
+                    <div>
+                        <label for="occupation">Occupation</label>
+                    </div>
+                    <div>
+                        <input type="text" id="occupation" name="occupation" placeholder="Occupation..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="floor">Floor</label>
+                    </div>
+                    <div>
+                        <input type="number" id="floor" name="floor" placeholder="Floor..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div>
+                        <label for="room">Room</label>
+                    </div>
+                    <div>
+                        <input type="text" id="room" name="room" placeholder="Room..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="desk">Desk</label>
+                    </div>
+                    <div>
+                        <input type="text" id="desk" name="desk" placeholder="Desk..." />
+                    </div>
+                    <div class="div-error-message">
+                        <span>
+                            <!--error message-->
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <div>
+                <input type="submit" value="confirm" />
+                <input type="button" value="cancel" />
+            </div>
+        </form>
+    </div>
+    <!-- end footer -->
+</body>
+
+</html>

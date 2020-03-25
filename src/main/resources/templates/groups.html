@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+	<div th:if="${staff.pools.size() > 0  and  staff.folders.size() > 0}">
+
+			<div class="div-cont">
+	
+				<form method="POST" th:object="${staff}" th:action="@{/staff/user/pools/share}">
+	
+					<input type="hidden" th:field="*{id}">
+	
+					<div class="div-succeed-cont" th:if="${msg!=null}">
+						<span th:text="${msg}"></span>					
+					</div>
+	
+					<br/>
+					
+					<div class="div-error-message" th:if="${error != null}">
+						<span th:text="${error}"></span>
+					</div>
+
+					<br/>
+	
+					<fieldset>
+						<legend> group management </legend>
+						<div>
+							<div>
+								<label for="selectedgroup">Select a group:</label>
+							</div>
+							<div>								
+								<select id="selectedgroup" name="selectedgroup" th:field="*{pool}">
+									<option th:each="value : ${staff.pools}" th:value="${value.id}" th:text="${value.name}"></option>
+								</select>
+							</div>
+						</div>
+						 <div>
+							<div>
+								<label for="selectedfolder">Select a folder:</label>
+							</div>
+							<div>
+								<select id="selectedfolder" name="selectedfolder" th:field="*{folder}">									
+									<option th:each="value : ${staff.folders}" th:value="${value.id}" th:text="${value.name}"/>
+								</select>
+							</div>
+						</div> 
+					</fieldset>
+					<br />
+					<div>
+						<input type="submit" value="share" /> 
+						<input type="button" value="cancel" th:onclick="'location.href=\''+@{/staff/user/home}+'\';'" />
+					</div>
+				</form>
+			</div>
+	
+			<br />
+	</div>		
+			
+	<div th:if="${staff.groups.size() > 0}">
+								
+        <fieldset>				
+            <legend>
+                Groups' shared folder
+            </legend>
+
+            <table class="tb-cont">
+
+                <tr>
+                    <th>name</th>
+                    <th>permission</th>
+                    <th>shared folder</th>
+                    <th>action</th>
+                </tr>
+                <tr th:each="pool : ${staff.groups}">
+                    <td th:text="${pool.name}"></td>
+                    <td th:text="${pool.permission}"></td>
+                    <td th:text="${pool.folder.name}"></td>
+                    <td>
+                        <input type="button" value="unshare" th:onclick="'location.href=\''+@{/staff/user/pools/unshare}+ '?id=' + ${pool.id} + '\';'"> 
+                    </td>
+                </tr>				                
+            </table>			
+        </fieldset>
+				    
+	</div>		
+			
+			
+		
+	
+	<div th:if="${staff.pools.size() == 0  and  staff.folders.size() == 0}" th:classappend="'div-login-img'">
+		<h3>You don't have any folder to share</h3>
+	</div>
+
+</div>
+
+</html>
