@@ -7,4 +7,4 @@ System for sharing files amoung users in the same company
 
 # Home Screen
 
-![](screenshots/sharefile-login.png)
+![](screenshots/sharefile-home.png)
