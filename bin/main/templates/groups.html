@@ -5,7 +5,7 @@
 
 <div layout:fragment="content">
 
-	<div th:if="${staff.pools.size() > 0  and  staff.folders.size() > 0}">
+	<div th:if="${staff.pools.size() > 0}  and  ${staff.folders.size() > 0}">
 
 			<div class="div-cont">
 	
@@ -86,11 +86,10 @@
         </fieldset>
 				    
 	</div>		
-			
-			
-		
-	
-	<div th:if="${staff.pools.size() == 0  and  staff.folders.size() == 0}" th:classappend="'div-login-img'">
+	<div th:if="${staff.pools.size() == 0}" th:classappend="'div-login-img'">
+		<h3>You don't have any group to share</h3>
+	</div>
+	<div th:if="${staff.folders.size() == 0}" th:classappend="'div-login-img'">
 		<h3>You don't have any folder to share</h3>
 	</div>
 
