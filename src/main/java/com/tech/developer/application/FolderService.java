@@ -5,6 +5,7 @@ import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.NotDirectoryException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
@@ -98,8 +99,12 @@ public class FolderService {
 		}
 	}
 	
-	public String getSourceDir() {
-		return StringUtil.getPath(targetFolder);
+	public String getSourceDir() throws IOException {
+		 Path dir = Paths.get(StringUtil.getPath(targetFolder));
+		 if(!Files.exists(dir)) {
+			 Files.createDirectories(dir);
+		 }
+		 return dir.toString();
 	}
 	
 }
