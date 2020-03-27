@@ -1,5 +1,6 @@
 package com.tech.developer.infrastructure.web.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -83,7 +84,7 @@ public class FilesController {
 			started(model, SecurityUtil.loggedStaff());
 			
 						
-		} catch (ApplicationServiceException e) {
+		} catch (ApplicationServiceException | IOException e) {
 			started(model, SecurityUtil.loggedStaff());
 			model.addAttribute("error",StringUtil.getFullPath("The ",file.getName(),e.getMessage()) );
 		}

@@ -33,10 +33,13 @@ public class FileLoderController {
 	public byte[] getFileBytes(@PathVariable("folder") String folder, @PathVariable("id") String id) {
 
 		byte[] data = null;
-		
-		String sourceDir = folderService.getSourceDir();
+	
 		
 			try {
+				
+				
+				String sourceDir = folderService.getSourceDir();
+				
 				Integer fileId = Integer.parseInt(id);
 				
 				File file = fileService.findFileByID(fileId);
