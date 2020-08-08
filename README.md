@@ -1,5 +1,5 @@
 # ShareFile
-System for sharing files amoung users in the same company
+System for sharing files between users in the same company
 
 # Login
 
